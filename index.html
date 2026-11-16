@@ -23,7 +23,7 @@
 <body>
 
   <!-- ========================================================================
-       Top Sticky Navigation
+       Top Sticky Navigation (with ES/EN Switcher, Theme Toggle & CV Viewer)
        ======================================================================== -->
   <header class="site-header" id="top">
     <div class="container header-inner">
@@ -34,20 +34,23 @@
 
       <nav aria-label="Navegación principal">
         <ul class="nav-links" id="nav-links-list">
-          <li><a href="#proyectos" class="nav-link" id="nav-link-proyectos">01. Proyectos</a></li>
-          <li><a href="#trayectoria" class="nav-link" id="nav-link-trayectoria">02. Trayectoria</a></li>
-          <li><a href="#competencias" class="nav-link" id="nav-link-competencias">03. Stack &amp; Certificaciones</a></li>
-          <li><a href="#contacto" class="nav-link" id="nav-link-contacto">04. Contacto</a></li>
+          <li><a href="#proyectos" class="nav-link" id="nav-link-proyectos" data-i18n="nav.projects">01. Proyectos</a></li>
+          <li><a href="#trayectoria" class="nav-link" id="nav-link-trayectoria" data-i18n="nav.trajectory">02. Trayectoria</a></li>
+          <li><a href="#competencias" class="nav-link" id="nav-link-competencias" data-i18n="nav.skills">03. Stack &amp; Certificaciones</a></li>
+          <li><a href="#contacto" class="nav-link" id="nav-link-contacto" data-i18n="nav.contact">04. Contacto</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <button type="button" class="lang-toggle" id="lang-toggle-btn" aria-label="Cambiar idioma Español / Inglés" title="Cambiar idioma (ES / EN)">
+          <span class="lang-active">ES</span><span>/</span><span>EN</span>
+        </button>
         <button type="button" class="theme-toggle" id="theme-toggle-btn" aria-label="Cambiar tema visual" title="Alternar modo claro / oscuro">
           <span id="theme-icon" aria-hidden="true">☾</span>
         </button>
-        <a href="./assets/CV_Jose_Ivan_Gomez_Vazquez.docx" download class="btn btn-secondary btn-sm" id="header-download-cv-btn">
-          Descargar CV
-        </a>
+        <button type="button" class="btn btn-secondary btn-sm js-open-cv-modal" id="header-open-cv-btn" data-i18n="nav.viewCv">
+          Ver / Descargar CV
+        </button>
         <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú de navegación">
           ☰
         </button>
@@ -63,43 +66,43 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-kicker">
-            <span>INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN</span>
+            <span data-i18n="hero.kicker1">INGENIERÍA EN CIENCIAS DE LA COMPUTACIÓN</span>
             <span class="hero-kicker-sep">/</span>
-            <span>ANALISTA E INGENIERO DE DATOS</span>
+            <span data-i18n="hero.kicker2">ANALISTA E INGENIERO DE DATOS</span>
           </div>
 
-          <h1 class="hero-title" id="hero-main-heading">
+          <h1 class="hero-title" id="hero-main-heading" data-i18n-html="hero.title">
             Arquitectura de datos, automatización operativa y <em>analítica aplicada</em> a la industria.
           </h1>
 
-          <p class="hero-lead">
+          <p class="hero-lead" data-i18n-html="hero.lead">
             Soy <strong>José Iván Gómez Vázquez</strong>. Perfil analítico y técnico con experiencia en el ciclo completo de los datos: desde la extracción, automatización de flujos y desarrollo de software en <strong>Python y SQL</strong>, hasta la implementación de modelos dimensionales, sistemas de telemetría en tiempo real y tableros ejecutivos en <strong>Power BI, Tableau y Metabase</strong>.
           </p>
 
           <div class="hero-cta-row">
-            <a href="#proyectos" class="btn btn-primary" id="hero-cta-projects">
+            <a href="#proyectos" class="btn btn-primary" id="hero-cta-projects" data-i18n="hero.ctaProjects">
               Explorar Proyectos e Ingeniería →
             </a>
-            <a href="./assets/CV_Jose_Ivan_Gomez_Vazquez.docx" download class="btn btn-secondary" id="hero-cta-cv">
-              Descargar CV (.docx)
-            </a>
-            <a href="#contacto" class="btn btn-secondary" id="hero-cta-contact">
-              Contactar
+            <button type="button" class="btn btn-secondary js-open-cv-modal" id="hero-cta-cv-modal" data-i18n="hero.ctaCvModal">
+              Ver CV Ejecutivo (PDF / Word)
+            </button>
+            <a href="./assets/CV_Jose_Ivan_Gomez_Vazquez.pdf" download class="btn btn-secondary" id="hero-cta-pdf-direct">
+              ↓ PDF (1 Pág.)
             </a>
           </div>
 
           <div class="hero-meta-strip tabular-nums">
             <div class="meta-item">
               <span class="meta-value">End-to-End</span>
-              <span class="meta-label">Extracción Python/TCP → SQL/dbt → BI &amp; Modelos Predictivos</span>
+              <span class="meta-label" data-i18n="hero.meta1Label">Extracción Python/TCP → SQL/dbt → BI &amp; Modelos Predictivos</span>
             </div>
             <div class="meta-item">
               <span class="meta-value">AUDI México</span>
-              <span class="meta-label">Prácticas en Planeación – Ingeniería Industrial (Digitalización)</span>
+              <span class="meta-label" data-i18n="hero.meta2Label">Prácticas en Planeación – Ingeniería Industrial (Digitalización)</span>
             </div>
             <div class="meta-item">
               <span class="meta-value">BUAP ’26</span>
-              <span class="meta-label">Ingeniero en Ciencias de la Computación &amp; Técnico en Programación</span>
+              <span class="meta-label" data-i18n="hero.meta3Label">Ingeniero en Ciencias de la Computación &amp; Técnico en Programación</span>
             </div>
           </div>
         </div>
@@ -108,7 +111,7 @@
         <aside class="hero-dossier" aria-label="Ficha técnica profesional">
           <div class="dossier-header">
             <span class="dossier-id">PERFIL // JIGV-2026</span>
-            <span class="dossier-status">● DISPONIBLE</span>
+            <span class="dossier-status" data-i18n="dossier.status">● DISPONIBLE</span>
           </div>
 
           <div class="portrait-frame">
@@ -123,20 +126,20 @@
 
           <ul class="dossier-list tabular-nums">
             <li class="dossier-row">
-              <span class="dossier-key">UBICACIÓN</span>
+              <span class="dossier-key" data-i18n="dossier.locKey">UBICACIÓN</span>
               <span class="dossier-val">Veracruz / Puebla, México</span>
             </li>
             <li class="dossier-row">
-              <span class="dossier-key">ESPECIALIDAD</span>
-              <span class="dossier-val">Data Analytics · ELT · Automatización</span>
+              <span class="dossier-key" data-i18n="dossier.specKey">ESPECIALIDAD</span>
+              <span class="dossier-val" data-i18n="dossier.specVal">Data Analytics · ELT · Automatización</span>
             </li>
             <li class="dossier-row">
-              <span class="dossier-key">STACK BASE</span>
+              <span class="dossier-key" data-i18n="dossier.stackKey">STACK BASE</span>
               <span class="dossier-val">Python, SQL, R, dbt, Power BI</span>
             </li>
             <li class="dossier-row">
-              <span class="dossier-key">IDIOMAS</span>
-              <span class="dossier-val">Español (Nativo) · Inglés (B1/B2)</span>
+              <span class="dossier-key" data-i18n="dossier.langKey">IDIOMAS</span>
+              <span class="dossier-val" data-i18n="dossier.langVal">Español (Nativo) · Inglés (B1/B2)</span>
             </li>
           </ul>
 
@@ -165,32 +168,32 @@
     </section>
 
     <!-- ======================================================================
-         Section 01 — Featured Projects & Interactive Architecture Workbench
+         Section 01 — Featured Projects & Interactive Data Visualizations
          ====================================================================== -->
     <section class="section" id="proyectos" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-index">01 / PROYECTOS</div>
+          <div class="section-index" data-i18n="sec1.index">01 / PROYECTOS</div>
           <div class="section-title-group">
-            <h2 class="section-title" id="projects-heading">Sistemas de Datos, Telemetría y Automatización</h2>
-            <p class="section-subtitle">
-              Cada proyecto resuelve un cuello de botella operativo real combinando ingeniería de datos robusta, integridad transaccional en SQL y visualización orientada a decisiones. Interactúa con los paneles técnicos de cada caso.
+            <h2 class="section-title" id="projects-heading" data-i18n="sec1.title">Sistemas de Datos, Telemetría y Automatización</h2>
+            <p class="section-subtitle" data-i18n="sec1.subtitle">
+              Cada proyecto resuelve un cuello de botella operativo real combinando ingeniería de datos robusta, integridad transaccional en SQL y visualización orientada a decisiones. Interactúa con las gráficas y paneles técnicos de cada caso.
             </p>
           </div>
         </div>
 
         <!-- Category Filters -->
         <div class="project-filters" role="group" aria-label="Filtrar proyectos por área">
-          <button type="button" class="filter-btn active" data-filter="all" id="filter-btn-all">
+          <button type="button" class="filter-btn active" data-filter="all" id="filter-btn-all" data-i18n="filter.all">
             Todos los Proyectos (3)
           </button>
-          <button type="button" class="filter-btn" data-filter="data-eng" id="filter-btn-data-eng">
+          <button type="button" class="filter-btn" data-filter="data-eng" id="filter-btn-data-eng" data-i18n="filter.dataEng">
             Data Engineering &amp; ELT
           </button>
-          <button type="button" class="filter-btn" data-filter="telemetry" id="filter-btn-telemetry">
+          <button type="button" class="filter-btn" data-filter="telemetry" id="filter-btn-telemetry" data-i18n="filter.telemetry">
             Telemetría &amp; Sistemas SDV
           </button>
-          <button type="button" class="filter-btn" data-filter="industrial-bi" id="filter-btn-industrial-bi">
+          <button type="button" class="filter-btn" data-filter="industrial-bi" id="filter-btn-industrial-bi" data-i18n="filter.bi">
             Automatización Industrial &amp; BI
           </button>
         </div>
@@ -198,24 +201,24 @@
         <div class="projects-stack">
 
           <!-- ================================================================
-               PROJECT 01: SDV-IBN Tooling & Telemetry Hub
+               PROJECT 01: SDV-IBN Tooling & Telemetry Hub (with Live Pareto Chart)
                ================================================================ -->
           <article class="project-card" data-categories="telemetry industrial-bi" id="project-sdv-ibn">
             <div class="project-top-bar">
               <div class="project-num-category">
                 <span class="project-num">PROYECTO 01</span>
                 <span>·</span>
-                <span class="project-category">AUTOMOTRIZ / TELEMETRÍA SDV &amp; GESTIÓN ITIL v4</span>
+                <span class="project-category" data-i18n="p1.cat">AUTOMOTRIZ / TELEMETRÍA SDV &amp; GESTIÓN ITIL v4</span>
               </div>
               <div class="project-links-top">
-                <span class="project-ext-link">Arquitectura IBN · DoIP/UDS + Power BI</span>
+                <span class="project-ext-link">Arquitectura IBN · DoIP/UDS + Power BI (DAX)</span>
               </div>
             </div>
 
             <div class="project-body">
               <div class="project-info">
                 <h3 class="project-title">SDV-IBN Tooling &amp; Telemetry Hub</h3>
-                <p class="project-summary">
+                <p class="project-summary" data-i18n-html="p1.summary">
                   Ecosistema integral de puesta en marcha electrónica (<em>Inbetriebnahme — IBN</em>) para vehículos definidos por software (SDV), diseñado para asegurar la trazabilidad diagnóstica en línea de producción, tolerancia a fallos y visibilidad ejecutiva en tiempo real.
                 </p>
 
@@ -245,22 +248,72 @@
                 </div>
               </div>
 
-              <!-- Interactive Workbench for Project 01 -->
+              <!-- Interactive Workbench for Project 01 (Default Tab: Live Pareto/Takt Chart + Simulator) -->
               <div class="project-workbench">
                 <div class="workbench-tabs" role="tablist">
-                  <button type="button" class="workbench-tab active" data-target="sdv-pane-arch" id="tab-sdv-arch">
-                    1. Flujo de Arquitectura
+                  <button type="button" class="workbench-tab active" data-target="sdv-pane-sim" id="tab-sdv-sim" data-i18n="p1.tab1">
+                    1. Gráfica Pareto &amp; Simulador P1
                   </button>
-                  <button type="button" class="workbench-tab" data-target="sdv-pane-sim" id="tab-sdv-sim">
-                    2. Simulador Andon / P1
+                  <button type="button" class="workbench-tab" data-target="sdv-pane-arch" id="tab-sdv-arch" data-i18n="p1.tab2">
+                    2. Flujo de Arquitectura
                   </button>
-                  <button type="button" class="workbench-tab" data-target="sdv-pane-code" id="tab-sdv-code">
+                  <button type="button" class="workbench-tab" data-target="sdv-pane-code" id="tab-sdv-code" data-i18n="p1.tab3">
                     3. Lógica PL/pgSQL &amp; DAX
                   </button>
                 </div>
 
-                <!-- Pane 1: Interactive Architecture -->
-                <div class="workbench-pane active" id="sdv-pane-arch">
+                <!-- Pane 1: Interactive Andon & Live SVG Pareto/Takt Chart -->
+                <div class="workbench-pane active" id="sdv-pane-sim">
+                  <div class="sim-controls">
+                    <span class="sim-metric-label">Simulador Andon / Power BI:</span>
+                    <div>
+                      <button type="button" class="filter-btn active" id="sdv-mode-normal" data-i18n="p1.btnNominal">
+                        Operación Nominal
+                      </button>
+                      <button type="button" class="filter-btn" id="sdv-mode-fault" data-i18n="p1.btnFault">
+                        Inyectar Fallo P1
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic SVG Chart: Pareto of DTCs & Takt Time -->
+                  <div class="chart-panel">
+                    <div class="chart-header-row">
+                      <span class="chart-title">Pareto DTCs &amp; Ciclo Real vs. Takt (60s)</span>
+                      <div class="chart-legend">
+                        <span><i class="legend-dot" style="background:#1D5C52;"></i>Ciclo (s)</span>
+                        <span><i class="legend-dot" style="background:#D9822B;"></i>% Acum.</span>
+                      </div>
+                    </div>
+                    <div class="chart-svg-wrap" id="sdv-chart-svg-wrap"></div>
+                  </div>
+
+                  <div class="sim-grid tabular-nums">
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">First Time Quality (FTQ)</div>
+                      <div class="sim-metric-val" id="sdv-sim-ftq">98.4% FTQ</div>
+                    </div>
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">Ciclo Real vs. Takt Time</div>
+                      <div class="sim-metric-val" id="sdv-sim-takt">58.2s / 60.0s</div>
+                    </div>
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">MTTR (Respuesta)</div>
+                      <div class="sim-metric-val" id="sdv-sim-mttr">1.8 min</div>
+                    </div>
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">Nodo Activo (Failover)</div>
+                      <div class="sim-metric-val" id="sdv-sim-node">PRIMARY-GW (Activo)</div>
+                    </div>
+                  </div>
+
+                  <div class="sim-log" id="sdv-sim-log">
+                    [DoIP/UDS Gateway] Trama 0x22 F190 validada (CRC32 + PKI OK) → Telemetría nominal en Andon Web.
+                  </div>
+                </div>
+
+                <!-- Pane 2: Interactive Architecture -->
+                <div class="workbench-pane" id="sdv-pane-arch">
                   <div class="arch-flow">
                     <div
                       class="arch-stage active"
@@ -312,44 +365,6 @@
                   </div>
                 </div>
 
-                <!-- Pane 2: Interactive Andon & Fault Injection Simulator -->
-                <div class="workbench-pane" id="sdv-pane-sim">
-                  <div class="sim-controls">
-                    <span class="sim-metric-label">Estado de Estación IBN (Simulación Interactiva):</span>
-                    <div>
-                      <button type="button" class="filter-btn active" id="sdv-mode-normal">
-                        Operación Nominal
-                      </button>
-                      <button type="button" class="filter-btn" id="sdv-mode-fault">
-                        Inyectar Fallo P1
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="sim-grid tabular-nums">
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">First Time Quality (FTQ)</div>
-                      <div class="sim-metric-val" id="sdv-sim-ftq">98.4% FTQ</div>
-                    </div>
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">Ciclo Real vs. Takt Time</div>
-                      <div class="sim-metric-val" id="sdv-sim-takt">58.2s / 60.0s</div>
-                    </div>
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">MTTR (Tiempo de Respuesta)</div>
-                      <div class="sim-metric-val" id="sdv-sim-mttr">1.8 min</div>
-                    </div>
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">Nodo Activo (Alta Disponibilidad)</div>
-                      <div class="sim-metric-val" id="sdv-sim-node">PRIMARY-GW (Activo)</div>
-                    </div>
-                  </div>
-
-                  <div class="sim-log" id="sdv-sim-log">
-                    [DoIP/UDS Gateway] Trama 0x22 F190 validada (CRC32 + PKI OK) → Telemetría nominal en Andon Web.
-                  </div>
-                </div>
-
                 <!-- Pane 3: Code Preview -->
                 <div class="workbench-pane" id="sdv-pane-code">
                   <pre class="code-snippet"><code><span class="code-cm">-- Trigger PL/pgSQL: Detección automática de incidente P1 (ITIL v4)</span>
@@ -370,14 +385,14 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
           </article>
 
           <!-- ================================================================
-               PROJECT 02: Pipeline ELT de Datos Financieros (PipelineELT)
+               PROJECT 02: Pipeline ELT de Datos Financieros (with SMA-30 Chart)
                ================================================================ -->
           <article class="project-card" data-categories="data-eng industrial-bi" id="project-pipeline-elt">
             <div class="project-top-bar">
               <div class="project-num-category">
                 <span class="project-num">PROYECTO 02</span>
                 <span>·</span>
-                <span class="project-category">DATA ENGINEERING / PIPELINE ELT &amp; MODELADO DIMENSIONAL</span>
+                <span class="project-category" data-i18n="p2.cat">DATA ENGINEERING / PIPELINE ELT &amp; MODELADO DIMENSIONAL</span>
               </div>
               <div class="project-links-top">
                 <a
@@ -394,8 +409,8 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
 
             <div class="project-body">
               <div class="project-info">
-                <h3 class="project-title">Pipeline ELT de Datos Financieros con Airflow, dbt y PostgreSQL</h3>
-                <p class="project-summary">
+                <h3 class="project-title" data-i18n="p2.title">Pipeline ELT de Datos Financieros con Airflow, dbt y PostgreSQL</h3>
+                <p class="project-summary" data-i18n-html="p2.summary">
                   Arquitectura <strong>ELT por lotes</strong> contenerizada en Docker que extrae diariamente precios históricos OHLCV de acciones y tipos de cambio oficiales del Banco Central Europeo, almacena datos crudos con idempotencia garantizada y construye un modelo dimensional analítico con <strong>dbt</strong>.
                 </p>
 
@@ -422,22 +437,70 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
                 </div>
               </div>
 
-              <!-- Interactive Workbench for Project 02 -->
+              <!-- Interactive Workbench for Project 02 (Default Tab: SMA-30 Chart & Marts) -->
               <div class="project-workbench">
                 <div class="workbench-tabs" role="tablist">
-                  <button type="button" class="workbench-tab active" data-target="elt-pane-arch" id="tab-elt-arch">
-                    1. Linaje de Datos (ELT)
+                  <button type="button" class="workbench-tab active" data-target="elt-pane-sim" id="tab-elt-sim" data-i18n="p2.tab1">
+                    1. Serie SMA-30 &amp; Marts (MXN)
                   </button>
-                  <button type="button" class="workbench-tab" data-target="elt-pane-sim" id="tab-elt-sim">
-                    2. Explorador de Marts
+                  <button type="button" class="workbench-tab" data-target="elt-pane-arch" id="tab-elt-arch" data-i18n="p2.tab2">
+                    2. Linaje de Datos (ELT)
                   </button>
-                  <button type="button" class="workbench-tab" data-target="elt-pane-code" id="tab-elt-code">
+                  <button type="button" class="workbench-tab" data-target="elt-pane-code" id="tab-elt-code" data-i18n="p2.tab3">
                     3. SQL / Modelo dbt
                   </button>
                 </div>
 
-                <!-- Pane 1: ELT Lineage -->
-                <div class="workbench-pane active" id="elt-pane-arch">
+                <!-- Pane 1: Interactive Marts & Live SMA-30 Time-Series Chart -->
+                <div class="workbench-pane active" id="elt-pane-sim">
+                  <div class="sim-controls">
+                    <span class="sim-metric-label">Seleccionar Ticker (<code>marts.fct_returns</code>):</span>
+                    <div>
+                      <button type="button" class="filter-btn elt-ticker-btn active" data-ticker="WALMEX.MX">WALMEX.MX</button>
+                      <button type="button" class="filter-btn elt-ticker-btn" data-ticker="AAPL">AAPL</button>
+                      <button type="button" class="filter-btn elt-ticker-btn" data-ticker="MSFT">MSFT</button>
+                      <button type="button" class="filter-btn elt-ticker-btn" data-ticker="BTC-USD">BTC-USD</button>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic SVG Chart: Close Price vs SMA-30 -->
+                  <div class="chart-panel">
+                    <div class="chart-header-row">
+                      <span class="chart-title">Cierre Diario vs. Media Móvil (SMA-30) en MXN</span>
+                      <div class="chart-legend">
+                        <span><i class="legend-dot" style="background:#C84B31;"></i>Cierre (MXN)</span>
+                        <span><i class="legend-dot" style="background:#1D5C52;"></i>SMA-30</span>
+                      </div>
+                    </div>
+                    <div class="chart-svg-wrap" id="elt-chart-svg-wrap"></div>
+                  </div>
+
+                  <div class="sim-grid tabular-nums">
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">Activo / Emisora</div>
+                      <div class="sim-metric-val" id="elt-sim-company">Walmart de México y Centroamérica</div>
+                    </div>
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">Cierre Convertido (MXN)</div>
+                      <div class="sim-metric-val" id="elt-sim-close">$64.85 MXN</div>
+                    </div>
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">Rendimiento YTD</div>
+                      <div class="sim-metric-val" id="elt-sim-ytd">+11.42%</div>
+                    </div>
+                    <div class="sim-metric-box">
+                      <div class="sim-metric-label">Volatilidad Anualizada (30d)</div>
+                      <div class="sim-metric-val" id="elt-sim-vol">18.6%</div>
+                    </div>
+                  </div>
+
+                  <div class="sim-log" id="elt-sim-log">
+                    [dbt marts.agg_ticker_performance] ticker=WALMEX.MX | fx_factor=1.0000 | status=OK (Idempotent Upsert)
+                  </div>
+                </div>
+
+                <!-- Pane 2: ELT Lineage -->
+                <div class="workbench-pane" id="elt-pane-arch">
                   <div class="arch-flow">
                     <div
                       class="arch-stage active"
@@ -489,42 +552,6 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
                   </div>
                 </div>
 
-                <!-- Pane 2: Interactive Marts Inspector -->
-                <div class="workbench-pane" id="elt-pane-sim">
-                  <div class="sim-controls">
-                    <span class="sim-metric-label">Consultar <code>marts.agg_ticker_performance</code> (Moneda reporte: MXN):</span>
-                    <div>
-                      <button type="button" class="filter-btn elt-ticker-btn active" data-ticker="WALMEX.MX">WALMEX.MX</button>
-                      <button type="button" class="filter-btn elt-ticker-btn" data-ticker="AAPL">AAPL</button>
-                      <button type="button" class="filter-btn elt-ticker-btn" data-ticker="MSFT">MSFT</button>
-                      <button type="button" class="filter-btn elt-ticker-btn" data-ticker="BTC-USD">BTC-USD</button>
-                    </div>
-                  </div>
-
-                  <div class="sim-grid tabular-nums">
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">Activo / Emisora</div>
-                      <div class="sim-metric-val" id="elt-sim-company">Walmart de México y Centroamérica</div>
-                    </div>
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">Cierre Convertido (MXN)</div>
-                      <div class="sim-metric-val" id="elt-sim-close">$64.85 MXN</div>
-                    </div>
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">Rendimiento YTD</div>
-                      <div class="sim-metric-val" id="elt-sim-ytd">+11.42%</div>
-                    </div>
-                    <div class="sim-metric-box">
-                      <div class="sim-metric-label">Volatilidad Anualizada (30d)</div>
-                      <div class="sim-metric-val" id="elt-sim-vol">18.6%</div>
-                    </div>
-                  </div>
-
-                  <div class="sim-log" id="elt-sim-log">
-                    [dbt marts.agg_ticker_performance] ticker=WALMEX.MX | fx_factor=1.0000 | status=OK (Idempotent Upsert)
-                  </div>
-                </div>
-
                 <!-- Pane 3: SQL / dbt Code -->
                 <div class="workbench-pane" id="elt-pane-code">
                   <pre class="code-snippet"><code><span class="code-cm">-- Consulta analítica sobre el modelo dimensional construido con dbt</span>
@@ -552,7 +579,7 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
               <div class="project-num-category">
                 <span class="project-num">PROYECTO 03</span>
                 <span>·</span>
-                <span class="project-category">INDUSTRIA AUTOMOTRIZ / PLANEACIÓN – INGENIERÍA INDUSTRIAL</span>
+                <span class="project-category" data-i18n="p3.cat">INDUSTRIA AUTOMOTRIZ / PLANEACIÓN – INGENIERÍA INDUSTRIAL</span>
               </div>
               <div class="project-links-top">
                 <span class="project-ext-link">AUDI México · Prácticas Profesionales (2026)</span>
@@ -561,8 +588,8 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
 
             <div class="project-body">
               <div class="project-info">
-                <h3 class="project-title">Digitalización y Automatización de Procesos de Planeación — AUDI México</h3>
-                <p class="project-summary">
+                <h3 class="project-title" data-i18n="p3.title">Digitalización y Automatización de Procesos de Planeación — AUDI México</h3>
+                <p class="project-summary" data-i18n-html="p3.summary">
                   Proyecto desarrollado dentro del área de <strong>Planeación – Ingeniería Industrial en AUDI México</strong>, enfocado en unificar múltiples bases de datos operativas de distintas fuentes para eliminar el procesamiento manual y habilitar la visualización ejecutiva automatizada.
                 </p>
 
@@ -677,10 +704,10 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
     <section class="section" id="trayectoria" aria-labelledby="trajectory-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-index">02 / TRAYECTORIA</div>
+          <div class="section-index" data-i18n="sec2.index">02 / TRAYECTORIA</div>
           <div class="section-title-group">
-            <h2 class="section-title" id="trajectory-heading">Experiencia en Industria y Formación Académica</h2>
-            <p class="section-subtitle">
+            <h2 class="section-title" id="trajectory-heading" data-i18n="sec2.title">Experiencia en Industria y Formación Académica</h2>
+            <p class="section-subtitle" data-i18n="sec2.subtitle">
               Combinación sólida de fundamentos en Ciencias de la Computación y experiencia práctica resolviendo problemas operativos en entornos industriales de alta exigencia.
             </p>
           </div>
@@ -689,7 +716,7 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
         <div class="trajectory-grid">
           <!-- Column 1: Professional Experience -->
           <div>
-            <h3 class="trajectory-col-title">Experiencia Profesional e Industrial</h3>
+            <h3 class="trajectory-col-title" data-i18n="sec2.colExp">Experiencia Profesional e Industrial</h3>
             <div class="timeline-list">
               <article class="timeline-item">
                 <div class="timeline-meta tabular-nums">
@@ -717,7 +744,7 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
 
           <!-- Column 2: Education -->
           <div>
-            <h3 class="trajectory-col-title">Educación Formal</h3>
+            <h3 class="trajectory-col-title" data-i18n="sec2.colEdu">Educación Formal</h3>
             <div class="timeline-list">
               <article class="timeline-item">
                 <div class="timeline-meta tabular-nums">
@@ -752,10 +779,10 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
     <section class="section" id="competencias" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-index">03 / COMPETENCIAS</div>
+          <div class="section-index" data-i18n="sec3.index">03 / COMPETENCIAS</div>
           <div class="section-title-group">
-            <h2 class="section-title" id="skills-heading">Ecosistema Técnico y Certificaciones</h2>
-            <p class="section-subtitle">
+            <h2 class="section-title" id="skills-heading" data-i18n="sec3.title">Ecosistema Técnico y Certificaciones</h2>
+            <p class="section-subtitle" data-i18n="sec3.subtitle">
               Dominio de herramientas especializadas para cada etapa del flujo de valor del dato: captura, transformación gobernada, automatización y visualización ejecutiva.
             </p>
           </div>
@@ -872,10 +899,10 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
     <section class="section" id="contacto" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-index">04 / CONTACTO</div>
+          <div class="section-index" data-i18n="sec4.index">04 / CONTACTO</div>
           <div class="section-title-group">
-            <h2 class="section-title" id="contact-heading">Conversemos sobre Datos, Ingeniería y Nuevos Proyectos</h2>
-            <p class="section-subtitle">
+            <h2 class="section-title" id="contact-heading" data-i18n="sec4.title">Conversemos sobre Datos, Ingeniería y Nuevos Proyectos</h2>
+            <p class="section-subtitle" data-i18n="sec4.subtitle">
               Disponible para posiciones de Analista de Datos, Ingeniero de Datos, Business Intelligence o Automatización de Procesos en México o modalidad remota.
             </p>
           </div>
@@ -950,17 +977,27 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
 
             <div class="contact-row-card">
               <div>
-                <div class="contact-row-label">Currículum Vitae Completo</div>
-                <div class="contact-row-val">CV — José Iván Gómez Vázquez (.docx)</div>
+                <div class="contact-row-label">Currículum Vitae (PDF 1 Pág. ATS &amp; Word)</div>
+                <div class="contact-row-val">CV — José Iván Gómez Vázquez</div>
               </div>
-              <a
-                href="./assets/CV_Jose_Ivan_Gomez_Vazquez.docx"
-                download
-                class="copy-btn"
-                id="contact-download-cv-btn"
-              >
-                Descargar ↓
-              </a>
+              <div style="display:flex; gap:0.4rem;">
+                <a
+                  href="./assets/CV_Jose_Ivan_Gomez_Vazquez.pdf"
+                  download
+                  class="copy-btn"
+                  id="contact-download-pdf-btn"
+                >
+                  PDF ↓
+                </a>
+                <a
+                  href="./assets/CV_Jose_Ivan_Gomez_Vazquez.docx"
+                  download
+                  class="copy-btn"
+                  id="contact-download-cv-btn"
+                >
+                  DOCX ↓
+                </a>
+              </div>
             </div>
           </div>
 
@@ -1008,6 +1045,112 @@ $$ <span class="code-kw">LANGUAGE</span> plpgsql;</code></pre>
       </div>
     </section>
   </main>
+
+  <!-- ========================================================================
+       Integrated 1-Page Executive CV Viewer Modal
+       ======================================================================== -->
+  <div class="cv-modal-backdrop" id="cv-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cv-modal-heading">
+    <div class="cv-modal-window">
+      <div class="cv-modal-bar">
+        <span class="cv-modal-title" id="cv-modal-heading">VISTA PREVIA EJECUTIVA · CV JOSÉ IVÁN GÓMEZ VÁZQUEZ (1 PÁGINA ATS)</span>
+        <div class="cv-modal-actions">
+          <a href="./assets/CV_Jose_Ivan_Gomez_Vazquez.pdf" download class="btn btn-accent btn-sm" id="modal-download-pdf-btn">
+            ↓ Descargar PDF (Recomendado)
+          </a>
+          <a href="./assets/CV_Jose_Ivan_Gomez_Vazquez.docx" download class="btn btn-secondary btn-sm" id="modal-download-docx-btn">
+            ↓ Descargar Word (.docx)
+          </a>
+          <button type="button" class="btn btn-secondary btn-sm" id="close-cv-modal-btn">
+            Cerrar ✕
+          </button>
+        </div>
+      </div>
+
+      <div class="cv-modal-body">
+        <div class="cv-sheet">
+          <div class="cv-sheet-header">
+            <div>
+              <div class="cv-sheet-name">José Iván Gómez Vázquez</div>
+              <div class="cv-sheet-role">Ingeniero en Ciencias de la Computación | Analista e Ingeniero de Datos</div>
+              <div class="cv-sheet-contact">
+                Veracruz / Puebla, México · Tel: +52 220 214 0661 · joseivangova@gmail.com<br />
+                LinkedIn: linkedin.com/in/jose-ivan-gomez-vazquez-ab541a291 · GitHub: github.com/TamerNarciso
+              </div>
+            </div>
+            <img src="./assets/profile.jpg" alt="Fotografía de José Iván Gómez Vázquez" class="cv-sheet-photo" />
+          </div>
+
+          <div class="cv-sheet-sec">
+            <div class="cv-sheet-sec-title">Perfil Profesional</div>
+            <div class="cv-sheet-item">
+              Perfil analítico y técnico con experiencia en el ciclo completo de los datos: desde la extracción, automatización de flujos y desarrollo de software en <strong>Python y SQL</strong>, hasta el modelado dimensional (<strong>dbt / Airflow</strong>), implementación de modelos predictivos y diseño de dashboards ejecutivos (<strong>Power BI, Tableau y Metabase</strong>). Enfocado en resolver problemas operativos mediante soluciones escalables y respaldadas por datos.
+            </div>
+          </div>
+
+          <div class="cv-sheet-sec">
+            <div class="cv-sheet-sec-title">Experiencia Profesional</div>
+            <div class="cv-sheet-item">
+              <div class="cv-sheet-item-head">
+                <span>AUDI México — Prácticas Profesionales (Planeación – Ingeniería Industrial)</span>
+                <span>2026</span>
+              </div>
+              <div>
+                Proyecto de digitalización y automatización de procesos operativos trabajando con múltiples bases de datos de diversas fuentes para analizar y proponer visualizaciones efectivas y automatizadas.
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-sheet-sec">
+            <div class="cv-sheet-sec-title">Proyectos Destacados de Ingeniería y Datos</div>
+            <div class="cv-sheet-item">
+              <div class="cv-sheet-item-head">
+                <span>SDV-IBN Tooling &amp; Telemetry Hub</span>
+                <span>Python (Flask, TCP Sockets) · PostgreSQL (PL/pgSQL) · Power BI (DAX)</span>
+              </div>
+              <div>
+                Ecosistema de puesta en marcha electrónica (IBN) para vehículos definidos por software (SDV): gateway TCP DoIP/UDS, middleware Flask con validación CRC32/PKI, terminal web Andon con Fault Injection, automatización de incidentes ITIL v4 mediante triggers en PL/pgSQL y tablero ejecutivo en Power BI (FTQ, Takt Time vs. Ciclo Real, Pareto de DTCs y MTTR).
+              </div>
+            </div>
+            <div class="cv-sheet-item">
+              <div class="cv-sheet-item-head">
+                <span>Pipeline ELT de Datos Financieros (github.com/TamerNarciso/PipelineELT)</span>
+                <span>Python 3.11 · PostgreSQL 16 · dbt-core · Apache Airflow · Metabase</span>
+              </div>
+              <div>
+                Pipeline ELT diario en Docker: ingesta idempotente de precios OHLCV (yfinance) y divisas (BCE), modelado dimensional en dbt (forward-fill FX y marts incrementales) y dashboard automatizado en Metabase.
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-sheet-sec">
+            <div class="cv-sheet-sec-title">Educación</div>
+            <div class="cv-sheet-item">
+              <div class="cv-sheet-item-head">
+                <span>Benemérita Universidad Autónoma de Puebla (BUAP) — Ingeniería en Ciencias de la Computación</span>
+                <span>2021 – 2026</span>
+              </div>
+            </div>
+            <div class="cv-sheet-item">
+              <div class="cv-sheet-item-head">
+                <span>CBTIS No. 30 — Técnico en Programación</span>
+                <span>2018 – 2021</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-sheet-sec">
+            <div class="cv-sheet-sec-title">Certificaciones y Habilidades Técnicas</div>
+            <div class="cv-sheet-item">
+              • <strong>Samsung Innovation Campus (2026):</strong> Inteligencia Artificial y Programación (Samsung Electronics México / FCC BUAP).<br />
+              • <strong>Google Data Analytics Professional Certificate:</strong> SQL, R, limpieza de datos y visualización (Coursera).<br />
+              • <strong>Microsoft Python Development Professional Certificate:</strong> POO, estructuras de datos, testing y automatización.<br />
+              • <strong>Stack:</strong> Python, SQL (PostgreSQL, PL/pgSQL, MySQL), R, dbt, Airflow, Power BI (DAX), Tableau, Metabase, Power Platform, MS Office. Idiomas: Español (Nativo), Inglés (Intermedio).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================================
        Footer

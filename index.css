@@ -1251,6 +1251,226 @@ button {
 }
 
 /* ==========================================================================
+   Language Switcher, Interactive SVG Charts & Integrated CV Modal
+   ========================================================================== */
+
+.lang-toggle {
+  height: 38px;
+  padding: 0 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  border-color: var(--border-strong);
+  background-color: var(--bg-subtle);
+}
+
+.lang-toggle .lang-active {
+  color: var(--accent-primary);
+}
+
+.chart-panel {
+  padding: 0.85rem 0.95rem;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.chart-header-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.chart-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+.chart-svg-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.chart-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Integrated CV Viewer Modal */
+.cv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background-color: rgba(15, 16, 15, 0.72);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.cv-modal-backdrop.open {
+  display: flex;
+}
+
+.cv-modal-window {
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cv-modal-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1.35rem;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.cv-modal-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cv-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-modal-body {
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+}
+
+.cv-sheet {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--shadow-subtle);
+}
+
+.cv-sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.cv-sheet-name {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.cv-sheet-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin: 0.25rem 0 0.45rem;
+}
+
+.cv-sheet-contact {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.cv-sheet-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--border-hairline);
+  flex-shrink: 0;
+}
+
+.cv-sheet-sec {
+  margin-bottom: 1.1rem;
+}
+
+.cv-sheet-sec-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-primary);
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.cv-sheet-item {
+  margin-bottom: 0.65rem;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.cv-sheet-item-head {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 
