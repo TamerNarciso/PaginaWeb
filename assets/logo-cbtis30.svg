@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 84" fill="none" role="img" aria-label="Logo DGETI CBTIS No. 30">
+  <!-- DGETI / CBTIS Emblem: Industrial Gear + Globe + Lightning in Institutional Guinda (#6B1D2F) -->
+  <g transform="translate(8, 6)">
+    <!-- Outer Gear Teeth Circle -->
+    <circle cx="36" cy="36" r="32" fill="#6B1D2F" stroke="#B8860B" stroke-width="2.2" />
+    <circle cx="36" cy="36" r="27" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="5 3.5" />
+    <circle cx="36" cy="36" r="22" fill="#521422" stroke="#FFFFFF" stroke-width="1.2" />
+    <!-- Globe Meridians & Parallels -->
+    <ellipse cx="36" cy="36" rx="11" ry="21" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.55" />
+    <line x1="15" y1="36" x2="57" y2="36" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.55" />
+    <line x1="36" y1="15" x2="36" y2="57" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.55" />
+    <!-- Technological Lightning / Industrial Spark -->
+    <path d="M39 20 L29 36 H37 L33 52 L45 34 H37 Z" fill="#F4C430" />
+  </g>
+
+  <!-- Typography: DGETI / CBTis No. 30 -->
+  <g transform="translate(84, 18)">
+    <text x="0" y="16" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="0.8" fill="#6B1D2F" class="cbtis-primary-text">CBTis No. 30</text>
+    <text x="0" y="31" font-family="monospace" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#B8860B">DGETI · SEP</text>
+    <text x="0" y="44" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="0.4" fill="currentColor" opacity="0.8">TÉCNICO EN PROGRAMACIÓN</text>
+  </g>
+</svg>
